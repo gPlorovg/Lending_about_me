@@ -1,3 +1,4 @@
+"""Modul for correctly save response in json"""
 import json
 from os import environ, mkdir
 from requests import get
