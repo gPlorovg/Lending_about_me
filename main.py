@@ -1,11 +1,13 @@
 from requests import get
-from os import environ
+from os import environ, mkdir
 import json
 
 
 CODEWARS_USER_NAME = environ.get('CODEWARS_USER_NAME')
 GITHUB_USER_NAME = environ.get('GITHUB_USER_NAME')
 GITHUB_ACCESS_TOKEN = environ.get('GITHUB_ACCESS_TOKEN')
+
+mkdir("data")
 
 cw_resp = get("https://www.codewars.com/api/v1/users/{}".format(CODEWARS_USER_NAME))
 with open('data/codewars.json', 'w') as f:
