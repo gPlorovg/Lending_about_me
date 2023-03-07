@@ -7,7 +7,9 @@
 Setup your environment variables
 
 CODEWARS_USER_NAME = "your codewars user name"
+
 GITHUB_USER_NAME = "your github user name"
+
 GITHUB_ACCESS_TOKEN = "your github Access token"
 
 Look how to get your github Access token [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)!
