@@ -1,6 +1,6 @@
-"""Modul for correctly save response in json"""
+"""Modul for learning  how to use api"""
 import json
-from os import environ, mkdir
+from os import environ, mkdir, path
 from requests import get
 
 
@@ -8,7 +8,8 @@ CODEWARS_USER_NAME = environ.get('CODEWARS_USER_NAME')
 GITHUB_USER_NAME = environ.get('GITHUB_USER_NAME')
 GITHUB_ACCESS_TOKEN = environ.get('GITHUB_ACCESS_TOKEN')
 
-mkdir("data")
+if not path.isdir("data"):
+    mkdir("data")
 
 cw_resp = get(
                 f"https://www.codewars.com/api/v1/users/{CODEWARS_USER_NAME}",
