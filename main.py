@@ -1,4 +1,4 @@
-"""Modul for learning  how to use api"""
+"""Module for learning how to use api"""
 import json
 from os import environ, mkdir, path
 from requests import get
