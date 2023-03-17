@@ -1,6 +1,7 @@
 """Module for learning how to use api"""
 import json
 from os import environ, mkdir, path
+from webbrowser import open as open_web
 from requests import get
 
 
@@ -28,3 +29,5 @@ gh_resp = get(
 )
 with open('data/github.json', 'w', encoding="utf-8") as f:
     json.dump(gh_resp.json(), f, indent=4)
+
+open_web("index.html")
