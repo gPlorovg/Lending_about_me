@@ -406,12 +406,36 @@ footer p{
     margin-bottom: 20px;
 }
 .info_square {
+    display: flex;
+    gap: 60px;
     margin: 20px auto;
     background-color: #b7dce0;
     padding: 24px;
     border-radius: 24px;
 }
+.account_info img {
+    width: 100px;
+    height: 100px;
+}
+.account_content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 
+}
+.github_repo {
+    color: #8b949e;
+    background-color: #0d1117;
+    border-radius: 10px;
+    padding: 15px;
+}
+.github_repo a{
+    color: #58a6ff;
+    margin-right: 20px;
+}
+.repo_lang{
+    margin-top: 10px;
+}
 #img_main {
     width: 200px;
     height: 200px;
