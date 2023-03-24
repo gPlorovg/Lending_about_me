@@ -1,7 +1,6 @@
 """Module for learning how to use api"""
 import json
 from os import environ, mkdir, path
-from webbrowser import open as open_web
 from requests import get
 from jinja2 import Template
 
