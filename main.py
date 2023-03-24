@@ -39,15 +39,26 @@ def extract_data_github():
         return [github_data.get(item) for item in ["login", "avatar_url", "followers", "following", "public_repos",
                                                    "repos_url"]]
 
-# def extract_data_codewars():
-#     with open("data/codewars.json", "r", encoding="utf-8") as f:
-#         codewars_data = json.load(f)
-#         return [codewars_data.get(item) for item in ["login", "avatar_url", "followers", "following", "public_repos"]]
+def extract_data_codewars():
+    with open("data/codewars.json", "r", encoding="utf-8") as f:
+        codewars_data = json.load(f)
+        return [codewars_data.get(item) for item in ["username", "honor", "leaderboardPosition", "ranks"]]
 
 
 if __name__ == "__main__":
     data_update()
     print(extract_data_github())
+    template = Template(open("index.html", "r", encoding="utf-8").read())
+    github_data = extract_data_github()
+    codewars_data = extract_data_codewars()
+    print(extract_data_codewars())
+    rendered_page = template.render(
+        github_data=github_data,
+        repos_data=get(github_data[5], timeout=10).json(),
+        codewars_data=codewars_data
+    )
+    with open("rendered_index.html", "w", encoding="utf-8") as f:
+        f.write(rendered_page)
 
 
 

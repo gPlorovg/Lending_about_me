@@ -66,16 +66,16 @@
               Repositories:
             </h2><br>
             <div class="account_content">
-              {% for rep in github_data[4] %}
+              {% for i in range(github_data[4]) %}
               <div class="github_repo">
-                <a href="#">name</a>
-                <span>Public</span>
+                <a href="{{ repos_data[i]['html_url'] }}">{{ repos_data[i]["name"] }}</a>
+                <span>{{repos_data[i]["visibility"]}}</span>
                 <div class="repo_lang">
-                  <span>language</span>
+                  <span>{{ repos_data[i]["language"] }}</span>
                 </div>
               </div>
+              {% endfor %}
             </div>
-            {% endfor %}
           </div>
         </div>
     </section>
@@ -84,7 +84,28 @@
         Codewars Account
       </h2>
         <div class="info_square">
-
+          <div class="account_info">
+            <img class="avatar_icon" src="img/yamo_cut.png"><br>
+            <span>{{ codewars_data[0] }}</span><br><br>
+            <div>
+              <span>honor: {{codewars_data[1]}}</span>
+            </div>
+          </div>
+          <div>
+            <h2>
+              Leaderboard Position: {{ codewars_data[2] }}
+            </h2><br>
+            <h2>
+              Ranks:
+            </h2><br>
+            <div class="account_content">
+              <div class="codewars_rank">
+                Overall:<br><br>
+                {{ codewars_data[3]["overall"]["name"]}}<br><br>
+                <span>Score: {{ codewars_data[3]["overall"]["score"]}}</span>
+              </div>
+            </div>
+          </div>
         </div>
     </section>
   </main>

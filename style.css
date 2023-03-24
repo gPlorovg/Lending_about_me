@@ -390,6 +390,8 @@ footer p{
     border-radius: 100px;
     box-shadow: 0 0 8px #666;
     margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
 }
 .info_square {
     display: flex;
@@ -419,8 +421,14 @@ footer p{
     color: #58a6ff;
     margin-right: 20px;
 }
-.repo_lang{
+.repo_lang {
     margin-top: 10px;
+}
+.codewars_rank {
+    color: #8b949e;
+    background-color: #0d1117;
+    border-radius: 10px;
+    padding: 15px;
 }
 #img_main {
     width: 200px;
