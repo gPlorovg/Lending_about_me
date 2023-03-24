@@ -3,7 +3,9 @@ import json
 from os import environ, mkdir, path
 from requests import get
 from jinja2 import Template
+from dotenv import load_dotenv
 
+load_dotenv()
 
 CODEWARS_USER_NAME = environ.get('CODEWARS_USER_NAME')
 GITHUB_USER_NAME = environ.get('GITHUB_USER_NAME')
