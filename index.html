@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Best programmer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="script" href="script.css">
 </head>
 <body>
   <header>
@@ -53,13 +52,13 @@
       </h2>
         <div class="info_square">
           <div class="account_info">
-            <img class="avatar_icon" src="#"><br>
-            <span>name</span><br><br>
+            <img class="avatar_icon" src="{{ github_data[1] }}"><br>
+            <span>{{github_data[0]}}</span><br><br>
             <div>
               <svg height="16" viewBox="0 0 16 16" width="16">
                 <path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0-.001 3.999A2 2 0 0 0 5.5 3.5Z"></path>
               </svg>
-              <span> followers</span> / <span> following</span>
+              <span>{{github_data[2]}} followers</span> / <span> {{github_data[3]}} following</span>
             </div>
           </div>
           <div>
@@ -67,6 +66,7 @@
               Repositories:
             </h2><br>
             <div class="account_content">
+              {% for rep in github_data[4] %}
               <div class="github_repo">
                 <a href="#">name</a>
                 <span>Public</span>
@@ -75,6 +75,7 @@
                 </div>
               </div>
             </div>
+            {% endfor %}
           </div>
         </div>
     </section>
