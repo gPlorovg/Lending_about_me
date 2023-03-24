@@ -48,7 +48,7 @@ def extract_data_codewars():
 
 if __name__ == "__main__":
     data_update()
-    template = Template(open("index.html", "r", encoding="utf-8").read())
+    template = Template(open("template.html", "r", encoding="utf-8").read())
     github_data = extract_data_github()
     codewars_data = extract_data_codewars()
     rendered_page = template.render(
